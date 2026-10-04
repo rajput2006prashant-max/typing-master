@@ -1,0 +1,326 @@
+
+/* ------------------------------
+   Theme Colors
+------------------------------ */
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --panel: #ffffff;
+    --panel-soft: #f8fafc;
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --accent: #06b6d4;
+    --success: #10b981;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --shadow: rgba(15, 23, 42, 0.12);
+}
+
+/* ------------------------------
+   Basic Reset
+------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------
+   Body
+------------------------------ */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: var(--text);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(79, 70, 229, 0.6) rgba(255, 255, 255, 0.08);
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+    border-radius: 10px;
+}
+
+/* ------------------------------
+   Main Container
+------------------------------ */
+
+.typing-container {
+    width: min(960px, 100%);
+    min-height: 620px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 30px 28px 24px;
+    border-radius: 22px;
+    box-shadow: 0 20px 50px var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* ------------------------------
+   Header
+------------------------------ */
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    color: var(--primary-dark);
+    letter-spacing: 0.5px;
+}
+
+.header p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* ------------------------------
+   Stats
+------------------------------ */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    padding: 18px 12px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.08);
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-box h3 {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.stat-box p {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+/* ------------------------------
+   Typing Area
+------------------------------ */
+
+.typing-area {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#text-display {
+    background: var(--panel-soft);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 20px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--text);
+    min-height: 150px;
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+#typing-input {
+    width: 100%;
+    min-height: 150px;
+    resize: none;
+    overflow: hidden;
+    padding: 16px 18px;
+    font-size: 18px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    outline: none;
+    background: #ffffff;
+    color: var(--text);
+    transition: all 0.2s ease;
+    line-height: 1.6;
+}
+
+#typing-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+/* ------------------------------
+   Controls
+------------------------------ */
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    padding: 12px 26px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.22);
+    min-width: 150px;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ------------------------------
+   Time Options
+------------------------------ */
+
+.time-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.time-options button {
+    background: #eef2ff;
+    color: var(--primary-dark);
+    padding: 10px 18px;
+    box-shadow: none;
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    min-width: 110px;
+}
+
+.time-options button:hover {
+    background: #e0e7ff;
+}
+
+/* ------------------------------
+   Mobile Responsive
+------------------------------ */
+
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+
+    .typing-container {
+        padding: 22px 18px 18px;
+        min-height: auto;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+    }
+
+    #text-display {
+        font-size: 17px;
+        min-height: 120px;
+    }
+
+    #typing-input {
+        min-height: 120px;
+    }
+
+    .controls {
+        gap: 12px;
+    }
+
+    button {
+        min-width: 130px;
+        width: 100%;
+    }
+}
+
+/* Correct character */
+
+.correct {
+    color: green;
+}
+
+
+/* Wrong character */
+
+.wrong {
+    color: red;
+    background: #ffe0e0;
+}
+
+
+/* Current character */
+
+.current {
+    background: yellow;
+    border-radius: 3px;
+}
+
+
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
+    background-color: #ffe0e0;
+}
+
+.current {
+    background-color: yellow;
+    border-radius: 3px;
+}

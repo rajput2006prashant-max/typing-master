@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Typing Master</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <main class="typing-container">
+
+        <!-- Heading -->
+        <header class="header">
+            <h1>⌨️ Typing Master</h1>
+            <p>Improve Your Typing Speed</p>
+        </header>
+
+
+        <!-- Typing Information -->
+        <section class="stats">
+
+            <div class="stat-box">
+                <h3>WPM</h3>
+                <p id="wpm">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Accuracy</h3>
+                <p id="accuracy">100%</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Errors</h3>
+                <p id="errors">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Time</h3>
+                <p id="time">60</p>
+            </div>
+
+        </section>
+
+
+        <!-- Text Area -->
+        <section class="typing-area">
+
+            <div id="text-display">
+                The quick brown fox jumps over the lazy dog.
+                Practice typing every day to improve your speed and accuracy.
+                Good typing skills help you work faster and with more confidence.
+            </div>
+
+            <textarea id="typing-input" placeholder="Type here..." disabled>
+            </textarea>
+
+        </section>
+
+
+        <!-- Controls -->
+        <section class="controls">
+
+            <button id="start-btn">
+                Start Typing
+            </button>
+
+            <button id="restart-btn">
+                Restart
+            </button>
+
+        </section>
+
+
+        <!-- Time Selection -->
+        <section class="time-options">
+
+            <button>30 Sec</button>
+            <button>60 Sec</button>
+            <button>120 Sec</button>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
